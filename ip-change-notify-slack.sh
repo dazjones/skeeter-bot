@@ -7,10 +7,12 @@ STORAGE="${SCRIPT_PATH}/storage"
 IP_STORE="${STORAGE}/${LOCATION}-ip.txt"
 
 mkdir -p ${STORAGE}
-touch ${IP_STORE}
-touch ${SCRIPT_PATH}/slack_token
+mkdir -p ${SCRIPT_PATH}/credentials
 
-SLACK_TOKEN=$(cat ${SCRIPT_PATH}/slack_token)
+touch ${IP_STORE}
+touch ${SCRIPT_PATH}/credentials/slack_token
+
+SLACK_TOKEN=$(cat ${SCRIPT_PATH}/credentials/slack_token)
 IP=$(curl -s http://ipecho.net/plain)
 LAST_KNOWN_IP=$(cat ${IP_STORE})
 

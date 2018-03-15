@@ -23,7 +23,6 @@ then
 		curl -X POST -H 'Content-type: application/json' \
 		--data "{\"text\":\"Internet speed below ${THRESHOLD}MB/s: *${SPEED_MBS}*\", \"username\": \"Skeeter\", \"icon_emoji\": \":male_zombie:\"}" \
 		${SLACK_TOKEN}
-
 	fi
 	
 	echo "1" > ${STORAGE}/internet_speed_problem.tmp

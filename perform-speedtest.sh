@@ -37,5 +37,5 @@ else
 	echo "0" > ${STORAGE}/internet_speed_problem.tmp
 fi
 
-echo "\"${DATE_TIME}\", \"${SPEED}\"" >> "${STORAGE}/internet_speed-${DATE_FORMATTED}.csv"
-echo "\"${DATE_TIME}\", \"${SPEED}\"" >> "${STORAGE}/internet_speed.csv"
+echo "\"${DATE_TIME}\", ${SPEED}" >> "${STORAGE}/internet_speed-${DATE_FORMATTED}.csv"
+echo "\"${DATE_TIME}\", ${SPEED}" >> "${STORAGE}/internet_speed.csv"

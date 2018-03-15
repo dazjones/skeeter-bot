@@ -13,6 +13,6 @@ echo starting Music Section Scan
 curl "http://${PLEX_ADDRESS}/library/sections/3/refresh?force=0&X-Plex-Token=${PLEX_TOKEN}"
 
 curl -X POST -H 'Content-type: application/json' \
---data "{\"text\":\"Scanning sections for new PLEX media\", \"username\": \"Skeeter\", \"icon_emoji\": \":male_zombie:\"}" \
+--data "{\"text\":\"Scanning sections for new PLEX media :popcorn:\", \"username\": \"Skeeter\", \"icon_emoji\": \":male_zombie:\"}" \
 ${SLACK_TOKEN}
 

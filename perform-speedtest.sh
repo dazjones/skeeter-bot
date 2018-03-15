@@ -1,5 +1,5 @@
 #!/bin/bash
-THRESHOLD="3.0"
+THRESHOLD="2.0"
 SCRIPT_PATH=$(dirname "$(readlink -f "$0")")
 CREDENTIALS_STORE=${SCRIPT_PATH}/credentials/
 STORAGE=${SCRIPT_PATH}/storage/

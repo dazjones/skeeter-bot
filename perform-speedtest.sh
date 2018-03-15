@@ -4,8 +4,8 @@ SCRIPT_PATH=$(dirname "$(readlink -f "$0")")
 CREDENTIALS_STORE=${SCRIPT_PATH}/credentials/
 STORAGE=${SCRIPT_PATH}/storage/
 SLACK_TOKEN=$(cat ${CREDENTIALS_STORE}/slack_token)
-DATE_TIME=$(date)
 DATE_FORMATTED=$(date +'%F')
+TIME_FORMATTED=$(date +'%H:%M:%S')
 
 SPEED_MBS=$(wget --output-document=/dev/null http://ipv4.download.thinkbroadband.com/10MB.zip 2>&1 | \
 grep '\([0-9.]\+ [KM]B/s\)' | \
@@ -36,5 +36,5 @@ else
 	echo "0" > ${STORAGE}/internet_speed_problem.tmp
 fi
 
-echo "\"${DATE_TIME}\", ${SPEED}" >> "${STORAGE}/internet_speed-${DATE_FORMATTED}.csv"
-echo "\"${DATE_TIME}\", ${SPEED}" >> "${STORAGE}/internet_speed.csv"
+echo "\"${DATE_FORMATTED}\", \"${TIME_FORMATTED}\", ${SPEED}" >> "${STORAGE}/internet_speed-${DATE_FORMATTED}.csv"
+echo "\"${DATE_FORMATTED}\", \"${TIME_FORMATTED}\", ${SPEED}" >> "${STORAGE}/internet_speed.csv"
